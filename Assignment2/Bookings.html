@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <script src="filter.js"></script>
+    <link rel="stylesheet" type="text/css" href="styling.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZeMoSo Restaurent</title>
+    
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Image and text -->
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+      ZeMoSo Restaurent
+    </a>
+  </nav>
+    <!-- <header>ZeMoSo Restaurent</header> -->
+    <hr>
+    <div class="grid-container">
+        <div id="tables">
+            <h2 >Tables</h2>
+            <input type="text" id="tablesearch" placeholder="Search by Table Id...." class="tablesearch" onkeyup="tablesearch()">
+            <div class="tableitem" id="table1" ondragover="allowDrop(event)" ondrop="drop(event,this)">Table-1<br>
+
+
+                <!-- Button trigger modal -->
+<a type="button" class="btn btn-primary"  data-toggle="modal" data-target="#d1" id="e1" style="display:none;">
+    <!-- Launch demo modal -->
+</a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="d1" tabindex="-1" role="dialog" aria-labelledby="d1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"  id="tableContent1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+                <p id="nitemst1">Items:  </p><p id="totalt1">Total:   </p>
+                <table class="table-content" id="t1" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                
+
+
+                </table>
+                <button id='view1' class="button1" onclick="showTable('t1')">View Order Details</button>
+                <br>
+                <!-- <button id='c1' onclick="bill('t1')" class="button1" style="display:none">Generate Bill</button> -->
+                <br>
+                <br>
+                <br>
+                <button id='b1' class="button2" onclick="resetTable('t1')" style="display: none;">Reset The Table</button>
+            </div>
+            <div class="tableitem" id="table2" ondragover="allowDrop(event)" ondrop="drop(event,this)">Table-2<br>
+                <!-- Button trigger modal -->
+<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#d2"  id="e2" style="display: none;">
+    <!-- Launch demo modal -->
+</a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="d2" tabindex="-1" role="dialog" aria-labelledby="d2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"  id="tableContent2">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                <p id="nitemst2">Items:  </p><p id="totalt2">Total:   </p>
+                <table  class="table-content" id="t2" style="display: none;">
+                    <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                </table>
+                <button id='view2' class="button1" onclick="showTable('t2')">View Order Details</button>
+                <br>
+                <br>
+                <!-- <button id='c2' onclick="bill('t2')" class="button1" style="display:none">Generate Bill</button> -->
+                <br>
+                <br>
+                <button id='b2' class="button2" onclick="resetTable('t2')" style="display: none;">Reset The Table</button>
+            </div>
+
+
+
+
+
+
+
+            <div class="tableitem" id="table3" ondragover="allowDrop(event)" ondrop="drop(event,this)">Table-3<br>
+
+                <!-- Button trigger modal -->
+<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#d3" id="e3" style="display:none ;">
+    <!-- Launch demo modal -->
+</a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="d3" tabindex="-1" role="dialog" aria-labelledby="d3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="tableContent3">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+                <p id="nitemst3">Items:  </p><p id="totalt3">Total:   </p>
+                <table  class="table-content" id="t3" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                </table>
+                <button id='view3' class="button1" onclick="showTable('t3')">View Order Details</button>
+                <br>
+                <br>
+                <!-- <button id='c3' onclick="bill('t3')" class="button1" style="display:none">Generate Bill</button> -->
+                <br>
+                <br>
+                <button id='b3'   class="button2" onclick="resetTable('t3')" style="display: none;">Reset The Table</button>
+            </div>
+        </div>    
+            <div id="items">
+                <h2>Menu</h2>
+                <input type="text" id="tosearch" placeholder="Search by ItemName,Menu...." class="searchbox" onkeyup="search()">
+                <div id="entree">
+                    <h4 class="item" id="s0" draggable="true" ondragstart="drag(event)">Spring Rolls Rs-200</h4>
+                    <h4 class="item" id="s1" draggable="true" ondragstart="drag(event)">French Onion Soup Rs-200</h4>
+                    <h4 class="item" id="s2" draggable="true" ondragstart="drag(event)">Tomato Bruschetta Rs-200</h4>
+                </div>
+                <div id="main course">
+                    <h4 class="item" id="s3" draggable="true" ondragstart="drag(event)">Chicken Biryani Rs-200</h4>
+                    <h4 class="item" id="s4" draggable="true" ondragstart="drag(event)">Mutton Biryani Rs-400</h4>
+                    <h4 class="item" id="s5" draggable="true" ondragstart="drag(event)">veg Biryani Rs-150</h4>
+                </div>
+                <div id="appetizers">
+                    <h4 class="item" id="s6" draggable="true" ondragstart="drag(event)">The Perfect Meat and Cheese Tray Rs-150</h4>
+                    <h4 class="item" id="s7" draggable="true" ondragstart="drag(event)">Caprese Garlic Bread Rs-100</h4>
+                    <h4 class="item" id="s8" draggable="true" ondragstart="drag(event)">Oven Baked Zucchini Chips Rs-70</h4>
+                </div>
+                <div id="desserts">
+                    <h4 class="item" id="s9" draggable="true" ondragstart="drag(event)">Mint Oreo Cake Rs-400</h4>
+                    <h4 class="item" id="s10" draggable="true" ondragstart="drag(event)">Ultimate Gooey Brownies Rs-250</h4>
+                    <h4 class="item" id="s11" draggable="true" ondragstart="drag(event)">Coconut Cream Crepe Cake Rs-200</h4>
+                </div>
+                <div id="beverages">
+                    <h4 class="item" id="s12" draggable="true" ondragstart="drag(event)">Wine Rs-450</h4>
+                    <h4 class="item" id="s13" draggable="true" ondragstart="drag(event)">Coffee Rs-40</h4>
+                    <h4 class="item" id="s14" draggable="true" ondragstart="drag(event)">Lemonade Rs-30</h4>
+                </div>
+            </div>
+
+        </div>
+</body>
+</html>
